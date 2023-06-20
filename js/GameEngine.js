@@ -13,6 +13,25 @@ frm.addEventListener("submit", async (e) => {
     },
   });
 
+  loadTableData();
+});
+
+const handleDelete = async (id) => {
+  const isConfirmed = confirm("Are you confirm to delete");
+  if (isConfirmed) {
+    await fetch(`http://localhost:3000/games/${id}`, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+      },
+    });
+    loadTableData();
+  }
+};
+
+window.onload = () => loadTableData();
+
+const loadTableData = async () => {
   let getResponse = await fetch("http://localhost:3000/games");
   let data = await getResponse.json();
   let placeHolder = document.querySelector("#data-output");
@@ -28,9 +47,10 @@ frm.addEventListener("submit", async (e) => {
             <td>${game.ad}</td>
             <td>${game.startButton}</td>
             <td>${game.termsAndConditions}</td>
+            <td><button type="button" onClick="handleDelete('${game._id}')">Delete</button></td>
 
         </tr>
     `;
   }
   placeHolder.innerHTML = out;
-});
+};
