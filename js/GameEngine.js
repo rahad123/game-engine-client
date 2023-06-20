@@ -47,7 +47,7 @@ const loadTableData = async () => {
             <td>${game.ad}</td>
             <td>${game.startButton}</td>
             <td>${game.termsAndConditions}</td>
-            <td><button type="button" onClick="handleDelete('${game._id}')">Delete</button></td>
+            <td><button type="button" style="background-color:red;" onClick="handleDelete('${game._id}')">Delete</button></td>
 
         </tr>
     `;

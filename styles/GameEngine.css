@@ -1,7 +1,22 @@
 form {
   justify-content: center;
 }
+h1 {
+  text-align: center;
+}
 table,
 th {
   border: 1px solid black;
+}
+label {
+  display: inline-block;
+  width: 240px;
+}
+.sbt {
+  height: 40px;
+  width: 100px;
+  background-color: green;
+}
+#data-output {
+  text-align: center;
 }
