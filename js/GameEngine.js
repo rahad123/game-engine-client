@@ -95,7 +95,7 @@ const loadTableData = async () => {
             <td>${game.ad}</td>
             <td>${game.startButton}</td>
             <td>${game.termsAndConditions}</td>
-            <td><a href="www.facebook.com">Game</a></td>
+            <td><a href="./game.html">Game</a></td>
             <td><button type="button" style="background-color:red; cursor: pointer" onClick="handleDelete('${game._id}')">Delete</button></td>
             <td><button type="button" id="myBtn" style="background-color:yellow; cursor: pointer" onClick="handleUpdate('${game._id}')">Update</button></td>
         </tr>
